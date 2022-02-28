@@ -1,7 +1,8 @@
-import actionTypes from '../actions/actionTypes';
 import TASKS from '../../constants/tasks.mock';
+import actionTypes from '../actions/actionTypes';
 
-function tasksReducer(action, tasks = []) {
+// eslint-disable-next-line default-param-last
+function tasksReducer(tasks = [], action) {
   switch (action.type) {
     case actionTypes.LOAD_TASKS:
       return TASKS;

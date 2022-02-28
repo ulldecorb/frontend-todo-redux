@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import {
-  loadTasks,
+  loadTasks
 } from '../../redux/actions/actionCreator';
+import './todoList.css';
 
 function TodoList({ tasks, dispatch }) {
   useEffect(() => {
@@ -27,12 +28,12 @@ function TodoList({ tasks, dispatch }) {
 
 TodoList.propTypes = {
   tasks: PropTypes.shape([]).isRequired,
-  dispatch: PropTypes.func.isRequired,
+  dispatch: PropTypes.func.isRequired
 };
 
 function mapStateToProps(tasks) {
   return {
-    tasks,
+    tasks
   };
 }
 
