@@ -1,6 +1,6 @@
 import actionTypes from '../actions/actionTypes';
 
-function taskReducer(action, tasks = []) {
+function tasksReducer(action, tasks = []) {
   switch (action.type) {
     case actionTypes.LOAD_TASKS:
       return tasks;
@@ -22,4 +22,4 @@ function taskReducer(action, tasks = []) {
   }
 }
 
-export default taskReducer;
+export default tasksReducer;
