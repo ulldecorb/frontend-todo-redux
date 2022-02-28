@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import store from './redux/stores';
+import store from './redux/store/index';
+import TodoList from './components/TodoList/index';
 import './App.css';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
         <header className="App-header">
           <h1>TODO LIST</h1>
         </header>
+        <TodoList />
         <footer>
           App made on React + Flux = REDUX!
         </footer>

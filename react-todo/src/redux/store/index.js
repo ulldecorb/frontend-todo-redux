@@ -1,4 +1,4 @@
-import { createStore } from 'react';
+import { createStore } from 'redux';
 import tasksReducer from '../reducers/taskReducer';
 
 const store = createStore(

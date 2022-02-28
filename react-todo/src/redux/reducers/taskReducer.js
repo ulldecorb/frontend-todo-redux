@@ -1,9 +1,10 @@
 import actionTypes from '../actions/actionTypes';
+import TASKS from '../../constants/tasks.mock';
 
 function tasksReducer(action, tasks = []) {
   switch (action.type) {
     case actionTypes.LOAD_TASKS:
-      return tasks;
+      return TASKS;
     case actionTypes.ADD_TASK:
       return [...tasks, action.newTask];
     case actionTypes.DELETE_TASK:
