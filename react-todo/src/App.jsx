@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Provider } from 'react-redux';
 import store from './redux/store/index';
 import TodoList from './components/TodoList/index';
@@ -7,15 +7,15 @@ import './App.css';
 function App() {
   return (
     <Provider store={store}>
-      <div className="App">
-        <header className="App-header">
+      <>
+        <header className="app__header">
           <h1>TODO LIST</h1>
         </header>
         <TodoList />
-        <footer>
+        <footer className="app__footer">
           App made on React + Flux = REDUX!
         </footer>
-      </div>
+      </>
     </Provider>
   );
 }

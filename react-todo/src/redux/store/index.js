@@ -1,8 +1,8 @@
 import { createStore } from 'redux';
-import tasksReducer from '../reducers/taskReducer';
+import tasksReducer from '../reducers/tasksReducer';
 
 const store = createStore(
-  tasksReducer,
+  tasksReducer
 );
 
 export default store;
