@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import {
   loadTasks
 } from '../../redux/actions/actionCreator';
+import TodoItem from '../TodoItem/index';
 import './todoList.css';
 
 function TodoList({ tasks, dispatch }) {
@@ -17,9 +18,7 @@ function TodoList({ tasks, dispatch }) {
     <section className="todo-list">
       <ul className="todo-list__list">
         {tasks.map((task) => (
-          <li key={task.id}>
-            {task.todo}
-          </li>
+          <TodoItem key={task.id} todo={task} />
         ))}
       </ul>
     </section>
@@ -27,7 +26,7 @@ function TodoList({ tasks, dispatch }) {
 }
 
 TodoList.propTypes = {
-  tasks: PropTypes.shape([]).isRequired,
+  tasks: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   dispatch: PropTypes.func.isRequired
 };
 
