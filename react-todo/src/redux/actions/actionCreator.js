@@ -20,10 +20,10 @@ export function deleteTask(taskId) {
   };
 }
 
-export function updateTask(newTask) {
+export function updateTask(updatedTask) {
   return {
     type: actionTypes.UPDATE_TASK,
-    newTask
+    updatedTask
   };
 }
 

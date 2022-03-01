@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import {
-  loadTasks
+  loadTasks, deleteTask, doneTask, updateTask
 } from '../../redux/actions/actionCreator';
 import TodoItem from '../TodoItem/index';
 import './todoList.css';
@@ -14,11 +14,30 @@ function TodoList({ tasks, dispatch }) {
     }
   });
 
+  const handleToggleTodoCheck = (id) => {
+    dispatch(doneTask(id));
+  };
+
+  const handleDeleteTask = (id) => {
+    dispatch(deleteTask(id));
+  };
+
+  const handleUpdateTask = (id, task) => {
+    const updatedTask = { id, task };
+    dispatch(updateTask(updatedTask));
+  };
+
   return (
     <section className="todo-list">
       <ul className="todo-list__list">
         {tasks.map((task) => (
-          <TodoItem key={task.id} todo={task} />
+          <TodoItem
+            key={task.id}
+            todo={task}
+            handleDeleteTask={handleDeleteTask}
+            handleToggleTodoCheck={handleToggleTodoCheck}
+            handleUpdateTask={handleUpdateTask}
+          />
         ))}
       </ul>
     </section>

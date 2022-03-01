@@ -1,11 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { PropTypes } from 'prop-types';
-// import {connect} from 'redux';
-import {
-  deleteTask, doneTask, updateTask
-} from '../../redux/actions/actionCreator';
 
-function TodoItem({ todo, dispatch }) {
+function TodoItem({
+  todo, handleToggleTodoCheck, handleDeleteTask, handleUpdateTask
+}) {
   const { id, task, completed } = todo;
 
   const [newTask, setNewtask] = useState(task);
@@ -13,16 +11,16 @@ function TodoItem({ todo, dispatch }) {
   const updateTaskRef = useRef();
 
   const handleToggleTodoCheckClick = () => {
-    dispatch(doneTask(id));
+    handleToggleTodoCheck(id);
   };
 
   const handleDeleteTaskClick = () => {
-    dispatch(deleteTask(id));
+    handleDeleteTask(id);
   };
 
   const handleNewtask = () => {
     setNewtask(updateTaskRef.current.value);
-    dispatch(updateTask(id, updateTaskRef.current.value));
+    handleUpdateTask(id, updateTaskRef.current.value);
     updateTaskRef.current.value = null;
   };
 
@@ -63,7 +61,9 @@ TodoItem.propTypes = {
     id: PropTypes.string,
     completed: PropTypes.bool
   }).isRequired,
-  dispatch: PropTypes.func.isRequired
+  handleDeleteTask: PropTypes.PropTypes.func.isRequired,
+  handleToggleTodoCheck: PropTypes.PropTypes.func.isRequired,
+  handleUpdateTask: PropTypes.PropTypes.func.isRequired
 };
 
 export default TodoItem;
