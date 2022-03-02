@@ -14,5 +14,10 @@
       -ms-flex-align: center;
           align-items: center;
   font-size: 2rem;
+  margin-bottom: 10vh;
+}
+
+.todo-list__list {
+  width: 60vw;
 }
 /*# sourceMappingURL=todoList.css.map */

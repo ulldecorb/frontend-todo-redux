@@ -1,0 +1,76 @@
+@import '../../style/color';
+@import '../../style/mixins';
+
+.task {
+    height: 50px;
+    width: 100%;
+    @include flex(row, space-between, center);
+    margin:0;
+    padding:0;
+
+    &:nth-child(odd) {
+        background-color: $odd-background-list-color;
+    }
+
+    &:nth-child(even) {
+        background-color: $even-background-list-color;
+    }
+
+    &__checkbox {
+        margin: 0 1vw;
+        cursor: pointer;
+        width: 10%;
+    }
+
+    &__input {
+        width: 80%;
+        height: 5vh;
+        color: $dark-text;
+        padding: 0 0.8vw;
+        outline: none;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        &:focus {
+            background-color: $background-dark-text-focus;
+        }
+
+        &--completed {
+            text-decoration: line-through;
+            color: $light-text;
+        }
+    }
+
+    &__delete-button {
+        border-radius: 1vh;
+        margin: 0 1vw;
+        border: none;
+        width: 5vmin;
+        height: 4vmin;
+        visibility: hidden;
+        @include flex(row, center, center);
+        cursor: pointer;
+        color: $light-icon-color;
+
+        &:hover {
+            color: $delete-icon-color-hover;
+            box-shadow: 0 0 8px $delete-icon-color-hover;
+        }
+    }
+
+    &:hover {
+        .task__delete-button {
+            visibility: visible;
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .task__input {
+        font-size : 0.8rem;
+    }
+    .task__update-button {
+        font-size: 0.5rem;
+    }
+}
