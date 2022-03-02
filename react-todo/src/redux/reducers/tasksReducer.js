@@ -12,13 +12,16 @@ function tasksReducer(tasks = [], action) {
       return tasks.filter((task) => task.id !== action.taskId);
     case actionTypes.UPDATE_TASK: {
       const newTasks = [...tasks];
-      const newTodo = newTasks.find((action.newTask.id));
-      newTodo.todo = action.newTask.newTodo;
-      return newTodo;
+      const newTodo = newTasks.find((task) => action.updatedTask.id === task.id);
+      newTodo.todo = action.updatedTask.newTodo;
+      return newTasks;
     }
-    case actionTypes.DONE_TASK:
-      return tasks.map((task) => ((
-        task.id === action.taskId) ? { ...task, state: true } : task));
+    case actionTypes.DONE_TASK: {
+      const newTodos = [...tasks];
+      const newTodo = newTodos.find((todo) => todo.id === action.taskId);
+      newTodo.completed = !newTodo.completed;
+      return newTodos;
+    }
     default:
       return tasks;
   }

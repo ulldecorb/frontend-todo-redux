@@ -29,7 +29,7 @@ function TodoList({ tasks, dispatch }) {
 
   return (
     <section className="todo-list">
-      <ul className="todo-list__list">
+      <ol className="todo-list__list">
         {tasks.map((task) => (
           <TodoItem
             key={task.id}
@@ -38,6 +38,11 @@ function TodoList({ tasks, dispatch }) {
             handleToggleTodoCheck={handleToggleTodoCheck}
             handleUpdateTask={handleUpdateTask}
           />
+        ))}
+      </ol>
+      <ul className="todo-list__list">
+        {tasks.map((task) => (
+          <li key={task.id}>{task.completed ? 'true' : 'false'}</li>
         ))}
       </ul>
     </section>

@@ -15,4 +15,8 @@
           align-items: center;
   font-size: 2rem;
 }
+
+.todo-list__list {
+  width: 60vw;
+}
 /*# sourceMappingURL=todoList.css.map */
