@@ -11,10 +11,10 @@ function tasksReducer(tasks = [], action) {
     case actionTypes.DELETE_TASK:
       return tasks.filter((task) => task.id !== action.taskId);
     case actionTypes.UPDATE_TASK: {
-      const newTasks = [...tasks];
-      const newTodo = newTasks.find((task) => action.updatedTask.id === task.id);
-      newTodo.todo = action.updatedTask.newTodo;
-      return newTasks;
+      const newTodos = [...tasks];
+      const newTodo = newTodos.find((task) => action.updatedTask.id === task.id);
+      newTodo.task = action.updatedTask.task;
+      return newTodos;
     }
     case actionTypes.DONE_TASK: {
       const newTodos = [...tasks];

@@ -10,10 +10,8 @@ import './todoList.css';
 
 function TodoList({ tasks, dispatch }) {
   useEffect(() => {
-    if (!tasks.length) {
-      dispatch(loadTasks());
-    }
-  });
+    dispatch(loadTasks());
+  }, []);
 
   const handleToggleTodoCheck = (id) => {
     dispatch(doneTask(id));
@@ -44,7 +42,7 @@ function TodoList({ tasks, dispatch }) {
       <TodoAdder />
       <ul className="todo-list__list">
         {tasks.map((task) => (
-          <li key={task.id}>{`${task.completed ? 'true' : 'false'} ${task.id} ${task.task}`}</li>
+          <li key={task.id}>{`${task.completed ? 'true' : 'false'} ${task.task}`}</li>
         ))}
       </ul>
     </section>
