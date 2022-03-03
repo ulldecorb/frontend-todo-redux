@@ -1,0 +1,74 @@
+.add-task-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  margin-bottom: 15vh;
+}
+
+.add-task-box__input {
+  color: #1f1f1f;
+  width: 60%;
+  height: 3vh;
+  border: none;
+  outline: 2px solid #b4b4b4;
+  border-radius: 2vh;
+  padding: 0.8vh 0.8vw;
+}
+
+.add-task-box__input::-webkit-input-placeholder {
+  color: #b4b4b4;
+}
+
+.add-task-box__input:-ms-input-placeholder {
+  color: #b4b4b4;
+}
+
+.add-task-box__input::-ms-input-placeholder {
+  color: #b4b4b4;
+}
+
+.add-task-box__input::placeholder {
+  color: #b4b4b4;
+}
+
+.add-task-box__handle-add-button {
+  color: #5e5e5e;
+  width: 3vh;
+  height: 3vh;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 1vw;
+  border: none;
+  cursor: pointer;
+}
+
+.add-task-box__handle-add-button:hover {
+  color: white;
+  -webkit-box-shadow: 0 0 8px #5e5e5e;
+          box-shadow: 0 0 8px #5e5e5e;
+  background-color: #5e5e5e;
+}
+/*# sourceMappingURL=todoAdder.css.map */

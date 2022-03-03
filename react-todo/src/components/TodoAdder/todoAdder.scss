@@ -1,0 +1,39 @@
+@import '../../style/color';
+@import '../../style/mixins';
+
+.add-task-box {
+    @include flex( row, center, center);
+    width: 100vw;
+    margin-bottom: 15vh;
+                                
+    &__input {
+        color: $dark-text;
+        width: 60%;
+        height: 3vh;
+        border: none;
+        outline:2px solid $light-text-focus;
+        border-radius: 2vh;
+        padding: 0.8vh 0.8vw;
+        &::placeholder {
+            color: $light-text-focus;
+        }
+    }
+    
+    &__handle-add-button {
+        color: $icon-color;
+        width: 3vh;
+        height: 3vh;
+        border-radius: 50%;
+        @include flex(row, center, center);
+        margin: 0 1vw;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            color: $light-text;
+            box-shadow: 0 0 8px $icon-color;
+            background-color: $icon-color;
+
+        }
+    }
+}
