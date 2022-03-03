@@ -16,7 +16,7 @@ function tasksReducer(tasks = [], action) {
       newTodo.task = action.updatedTask.task;
       return newTodos;
     }
-    case actionTypes.DONE_TASK: {
+    case actionTypes.COMPLETE_TASK: {
       const newTodos = [...tasks];
       const newTodo = newTodos.find((todo) => todo.id === action.taskId);
       newTodo.completed = !newTodo.completed;
