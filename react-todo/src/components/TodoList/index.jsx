@@ -5,7 +5,6 @@ import {
   loadTasks, deleteTask, doneTask, updateTask
 } from '../../redux/actions/actionCreator';
 import TodoItem from '../TodoItem/index';
-import TodoAdder from '../TodoAdder/index';
 import './todoList.css';
 
 function TodoList({ tasks, dispatch }) {
@@ -39,12 +38,6 @@ function TodoList({ tasks, dispatch }) {
           />
         ))}
       </ol>
-      <TodoAdder />
-      <ul className="todo-list__list">
-        {tasks.map((task) => (
-          <li key={task.id}>{`${task.completed ? 'true' : 'false'} ${task.task}`}</li>
-        ))}
-      </ul>
     </section>
   );
 }

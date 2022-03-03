@@ -3,6 +3,7 @@ import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { v4 as randomNewId } from 'uuid';
 import { addTask } from '../../redux/actions/actionCreator';
+import './todoAdder.css';
 
 function TodoAdder({ dispatch }) {
   const newTaskRef = useRef();

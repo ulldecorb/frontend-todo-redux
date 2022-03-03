@@ -1,0 +1,26 @@
+@import './color';
+@import './mixins';
+
+.app {
+   
+    &__header {
+        background-color: $dark-background;
+        min-height: 20vh;
+        @include flex( column, center, center );
+        font-size: calc(10px + 2vmin);
+        color: $light-text;
+    }
+  
+    &__footer {
+        background-color: $dark-background;
+        min-height: 10vh;
+        width: 100vw;
+        @include flex( row, center, center );
+        font-size: calc(2px + 2vmin);
+        color: $light-text;
+        position: fixed;
+        bottom: 0;
+    }
+}
+  
+  
