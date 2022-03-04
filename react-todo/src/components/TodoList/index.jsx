@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import {
-  loadTasks, deleteTask, doneTask, updateTask
+  loadTasks, deleteTask, completeTask, updateTask
 } from '../../redux/actions/actionCreator';
 import TodoItem from '../TodoItem/index';
 import './todoList.css';
@@ -13,7 +13,7 @@ function TodoList({ tasks, dispatch }) {
   }, []);
 
   const handleToggleTodoCheck = (id) => {
-    dispatch(doneTask(id));
+    dispatch(completeTask(id));
   };
 
   const handleDeleteTask = (id) => {

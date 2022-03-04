@@ -27,9 +27,9 @@ export function updateTask(updatedTask) {
   };
 }
 
-export function doneTask(taskId) {
+export function completeTask(taskId) {
   return {
-    type: actionTypes.DONE_TASK,
+    type: actionTypes.COMPLETE_TASK,
     taskId
   };
 }
