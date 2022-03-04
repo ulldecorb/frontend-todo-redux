@@ -19,7 +19,7 @@ describe('tasksReducer', () => {
     const result = [];
     expect(expected).toEqual(result);
   });
-  test('delete task from task state by id', () => {
+  test('given an id and new todo update task state', () => {
     const actionCreator = {
       type: 'UPDATE_TASK',
       updatedTask: {
@@ -30,6 +30,16 @@ describe('tasksReducer', () => {
     const mockTasks = [{ id: '1234', task: 'initial task' }];
     const expected = tasksReducer(mockTasks, actionCreator);
     const result = [{ id: '1234', task: 'updated task' }];
+    expect(expected).toEqual(result);
+  });
+  test('given an id switch todo complete atribute', () => {
+    const actionCreator = {
+      type: 'COMPLETE_TASK',
+      taskId: '1234'
+    };
+    const mockTasks = [{ id: '1234', completed: true }];
+    const expected = tasksReducer(mockTasks, actionCreator);
+    const result = [{ id: '1234', completed: false }];
     expect(expected).toEqual(result);
   });
 });
