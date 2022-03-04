@@ -9,4 +9,11 @@ describe('tasksReducer', () => {
     const result = [{ task: 'task added' }];
     expect(expected).toEqual(result);
   });
+  test('delete task from task state by id', () => {
+    const actionCreator = { type: 'DELETE_TASK', taskId: '1234' };
+    const mockTasks = [{ id: '1234' }];
+    const expected = tasksReducer(mockTasks, actionCreator);
+    const result = [];
+    expect(expected).toEqual(result);
+  });
 });
